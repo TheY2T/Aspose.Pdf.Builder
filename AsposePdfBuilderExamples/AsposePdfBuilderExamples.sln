@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposePdfBuilderExamples", "AsposePdfBuilderExamples.csproj", "{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposePdfBuilder", "..\AsposePdfBuilder\AsposePdfBuilder.csproj", "{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

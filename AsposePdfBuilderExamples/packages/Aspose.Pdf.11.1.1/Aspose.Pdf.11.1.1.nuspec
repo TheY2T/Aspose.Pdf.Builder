@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Aspose.Pdf</id>
+    <version>11.1.1</version>
+    <title>Aspose.Pdf for .NET</title>
+    <authors>Aspose</authors>
+    <owners>Aspose</owners>
+    <licenseUrl>http://www.aspose.com/corporate/purchase/end-user-license-agreement.aspx</licenseUrl>
+    <projectUrl>http://www.aspose.com/categories/.net-components/aspose.pdf-for-.net/default.aspx</projectUrl>
+    <iconUrl>http://www.aspose.com/blogs/wp-content/uploads/2013/06/aspose-Pdf-for-net_100.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Aspose.Pdf for .NET is a PDF document creation and manipulation component that enables your .NET applications to read, write and manipulate existing PDF documents without using Adobe Acrobat. It also allows you to create forms and manage form fields embedded in a PDF document. This component is written in managed C# and it allows developers to add PDF creation and manipulation functionality to their Microsoft .NET applications (WinForms, ASP.NET and .NET Compact Framework).
+        Aspose.Pdf for .NET is affordable and offers an incredible wealth of features including PDF compression options; table creation and manipulation; support for graph objects; extensive hyperlink functionality; extended security controls; custom font handling; integration with data sources; add or remove bookmarks; create table of contents; add, update, delete attachments and annotations; import or export PDF form data; add, replace or remove text and images; split, concatenate, extract or inset pages; transform pages to image; print PDF documents and much more.</description>
+    <summary>Aspose.Pdf for .NET is an amazing component which provides the feature to create and manipulate PDF documents.</summary>
+    <releaseNotes>This release introduces the features, enhancements and bug fixes as detailed below:
+		
+Bugs
+PDFNEWNET-40040 License embedded as resource is not working with 11.1.0 but 11.0.0</releaseNotes>
+    <copyright>©Aspose 2002-2014. All Rights Reserved.</copyright>
+    <tags>Aspose.Pdf PDF XFA XPS TIFF PCL SVG HTML XML XSL-FO FDF XFDF PDF/A form Portfolio EPUB PSD to XLS DOC</tags>
+  </metadata>
+</package>
