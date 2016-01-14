@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
 using Aspose.Pdf;
 using Aspose.Pdf.Facades;
 using AsposePdfBuilder.Builders;
@@ -31,11 +30,12 @@ namespace AsposePdfBuilder.Factory
         ///     var concatenatedPdfs = PdfBuilderFactory.ConcatenatePdfs(generatedPdfs);
         /// </remarks>
         /// <param name="serialisedArrayPdfList">serialisedArrayPdfList</param>
+        /// <param name="licensePath">licensePath must be supplied to avoid watermarking on the concatenated pdfs</param>
         /// <returns>concatenated pdfs</returns>
-        public static byte[] ConcatenatePdfs(byte[] serialisedArrayPdfList)
+        public static byte[] ConcatenatePdfs(byte[] serialisedArrayPdfList, string licensePath)
         {
             // must set license in order to concatenate many files.
-            SetAsposeLicense();
+            SetAsposeLicense(licensePath);
 
             // deserialize the array into a more meaningful context for us to work with.
             var pdfBytesCollection = serialisedArrayPdfList.DeserializeObject<IList<byte[]>>();

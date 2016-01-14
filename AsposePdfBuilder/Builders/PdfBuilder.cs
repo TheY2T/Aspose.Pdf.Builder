@@ -255,9 +255,29 @@ namespace AsposePdfBuilder.Builders
 
         #endregion
 
+        /// <summary>
+        /// Creates a default A4 pdf and section for use.
+        /// </summary>
         public PdfBuilder()
         {
             AsposePdf = CreateDefaultA4PdfAndPageLayout();
+            Section = AsposePdf.Sections.Add();
+        }
+
+        /// <summary>
+        /// User can specify <paramref name="pageMargin"/>, <paramref name="height"/> and <paramref name="width"/>
+        /// to create a PDF fit for their purposes. 
+        /// Example usage: 
+        ///     new PdfBuilder(2.54, PageSize.A0Height, PageSize.A0Width);
+        ///     new PdfBuilder(0.5, PageSize.LedgerHeight, PageSize.LedgerWidth);
+        ///     new PdfBuilder(1.00, PageSize.B5Height, PageSize.B5Width); etc.
+        /// </summary>
+        /// <param name="pageMargin">pageMargin (interpreted in cm)</param>
+        /// <param name="height">height (interpreted in cm)</param>
+        /// <param name="width">width (interpreted in cm)</param>
+        public PdfBuilder(float pageMargin, float height, float width)
+        {
+            AsposePdf = CreatePdfAndPageLayoutWithUserDefinedValues(pageMargin, height, width);
             Section = AsposePdf.Sections.Add();
         }
 
@@ -283,6 +303,30 @@ namespace AsposePdfBuilder.Builders
                         Left = defaultMargin,
                         Right = defaultMargin,
                         Top = defaultMargin
+                    }
+                }
+            };
+        }
+
+        /// <summary>
+        /// Creates a pdf with user specified margins and page width / height.
+        /// NOTE: Please use <see cref="PageSize"/> to get desired the page layout height and width.
+        /// </summary>
+        /// <returns>pdf</returns>
+        private static Pdf CreatePdfAndPageLayoutWithUserDefinedValues(float pageMargin, float height, float width)
+        {
+            return new Pdf
+            {
+                PageSetup =
+                {
+                    PageHeight = height,
+                    PageWidth = width,
+                    Margin = new MarginInfo
+                    {
+                        Bottom = pageMargin,
+                        Left = pageMargin,
+                        Right = pageMargin,
+                        Top = pageMargin
                     }
                 }
             };
@@ -414,6 +458,17 @@ namespace AsposePdfBuilder.Builders
             var section = AsposePdf.Sections.Add();
             section.IsLandscape = true;
             Section = section;
+        }
+
+        /// <summary>
+        /// Retrieves the current section in use. 
+        /// NOTE: It is recommended that you only use this in specific cases. The PdfBuilder manipulates the <see cref="Section"/> 
+        /// through its available public methods. Use those methods over this if possible, in order to avoid any unexpected behaviour.
+        /// </summary>
+        /// <returns>the current Section in use</returns>
+        public Section GetSection()
+        {
+            return Section;
         }
 
         #endregion
