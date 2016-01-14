@@ -3,7 +3,7 @@ Aspose.Pdf.Builder is a toolkit designed to make developing with Aspose.Pdf a br
 
 <b>Latest Version:</b> 1.0.0.3
 
-Examples are available from the unit test solution provided here. 
+Examples are available from the unit test solution provided in the repository. 
 Look at the examples to understand how to use this simple toolkit. 
 
 I've removed the packages associated with the solutions as it made the repo unnecessarily large. Use nuGet Restore on the projects if you want to build them successfully.
