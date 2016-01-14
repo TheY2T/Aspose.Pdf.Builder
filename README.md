@@ -8,10 +8,10 @@ Look at the examples to understand how to use this simple toolkit.
 
 I've removed the packages associated with the solutions as it made the repo unnecessarily large. Use nuGet Restore on the projects if you want to build them successfully.
 
-1. <b>Creating a Builder to Build Content With</b>
+1. <b>Creating a Builder</b>
 <br/>Invoke the following:
 <br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();```
-<br/>This will creat a pdf defaulted to A4 portrait.
+<br/>This will create a pdf defaulted to A4 portrait.
 <br/>
 <br/>If you require a different page setup, invoke the following:
 <br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder(customMargin, height, width);```
