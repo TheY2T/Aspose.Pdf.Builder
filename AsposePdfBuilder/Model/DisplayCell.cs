@@ -2,6 +2,10 @@
 
 namespace AsposePdfBuilder.Model
 {
+    /// <summary>
+    /// DisplayCell encapsulates the common properties necessary to create a cell with content 
+    /// in Aspose.Pdf. A cell can also contain <see cref="TextAreaInfo"/> to be rendered as well.
+    /// </summary>
     public class DisplayCell
     {
         public int ColumnSpan { get; set; }

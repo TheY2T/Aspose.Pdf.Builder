@@ -50,10 +50,10 @@ namespace AsposePdfBuilder.Factory
             var streamList = pdfBytesCollection
                 .Select(pdf => new MemoryStream(pdf))
                     .Cast<Stream>()
-                    .ToList();
+                    .ToArray();
 
             // return merged pdfs.
-            return ReturnStreamListAsByteArray(streamList.ToArray());
+            return ReturnStreamListAsByteArray(streamList);
         }
 
         /// <summary>
