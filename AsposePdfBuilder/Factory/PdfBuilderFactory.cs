@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
+using System.Web.Hosting;
 using Aspose.Pdf;
 using Aspose.Pdf.Facades;
 using AsposePdfBuilder.Builders;
@@ -64,11 +64,9 @@ namespace AsposePdfBuilder.Factory
         /// Just call the method before processing (as part of an internal operation) for every call. 
         /// It is recommended you add the Aspose.Pdf.lic to your project in App_Data and have Build Action set to 'Content'.
         /// </summary>
-        public static void SetAsposeLicense()
+        public static void SetAsposeLicense(string licensePath)
         {
             var license = new License();
-            //var licensePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "Aspose.Pdf.lic");
-            var licensePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "App_Data", "Aspose.Pdf.lic"); // DEV
             if (!File.Exists(licensePath)) return;
             using (var licenseStream = new FileStream(licensePath, FileMode.Open, FileAccess.Read))
             {

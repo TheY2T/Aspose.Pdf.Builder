@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Aspose.Pdf.Generator;
 using AsposePdfBuilder.Builders;
 using AsposePdfBuilder.Extensions;
@@ -26,8 +27,9 @@ namespace AsposePdfBuilderExamples
             var exampleFooterText = "All Rights Reserved Footer Example © 2016";
             var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();
             
-            // set license, if available
-            AsposePdfBuilder.Factory.PdfBuilderFactory.SetAsposeLicense();
+            // set license, if available - e.g.
+            var licensePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "App_Data", "Aspose.Pdf.lic");
+            AsposePdfBuilder.Factory.PdfBuilderFactory.SetAsposeLicense(licensePath);
             
             // this is optional padding to be applied to all elements
             var parentPadding = new MarginInfo
