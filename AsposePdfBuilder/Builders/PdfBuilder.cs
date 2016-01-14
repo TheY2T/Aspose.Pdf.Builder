@@ -272,10 +272,10 @@ namespace AsposePdfBuilder.Builders
         ///     new PdfBuilder(0.5, PageSize.LedgerHeight, PageSize.LedgerWidth);
         ///     new PdfBuilder(1.00, PageSize.B5Height, PageSize.B5Width); etc.
         /// </summary>
-        /// <param name="pageMargin">pageMargin (interpreted in cm)</param>
-        /// <param name="height">height (interpreted in cm)</param>
-        /// <param name="width">width (interpreted in cm)</param>
-        public PdfBuilder(float pageMargin, float height, float width)
+        /// <param name="pageMargin">pageMargin (in cm)</param>
+        /// <param name="height">height (in cm)</param>
+        /// <param name="width">width (in cm)</param>
+        public PdfBuilder(MarginInfo pageMargin, float height, float width)
         {
             AsposePdf = CreatePdfAndPageLayoutWithUserDefinedValues(pageMargin, height, width);
             Section = AsposePdf.Sections.Add();
@@ -313,7 +313,7 @@ namespace AsposePdfBuilder.Builders
         /// NOTE: Please use <see cref="PageSize"/> to get desired the page layout height and width.
         /// </summary>
         /// <returns>pdf</returns>
-        private static Pdf CreatePdfAndPageLayoutWithUserDefinedValues(float pageMargin, float height, float width)
+        private static Pdf CreatePdfAndPageLayoutWithUserDefinedValues(MarginInfo pageMargin, float height, float width)
         {
             return new Pdf
             {
@@ -323,10 +323,10 @@ namespace AsposePdfBuilder.Builders
                     PageWidth = width,
                     Margin = new MarginInfo
                     {
-                        Bottom = pageMargin,
-                        Left = pageMargin,
-                        Right = pageMargin,
-                        Top = pageMargin
+                        Bottom = pageMargin.Bottom,
+                        Left = pageMargin.Left,
+                        Right = pageMargin.Right,
+                        Top = pageMargin.Top
                     }
                 }
             };

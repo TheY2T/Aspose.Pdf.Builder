@@ -64,7 +64,7 @@ namespace AsposePdfBuilderExamples
         #region Section 1 of Example 001
         private static void CreateSectionOneExample001(PdfBuilder pdfBuilder, MarginInfo parentPadding)
         {
-            var detailsColumnWidths = "140 310";
+            const string detailsColumnWidths = "140 310";
             const bool boolValue = true;
 
             // Create Outer Table
@@ -139,11 +139,11 @@ namespace AsposePdfBuilderExamples
         #region Section 2 of Example 001
         private static void CreateSectionTwoExample001(PdfBuilder pdfBuilder, MarginInfo parentPadding)
         {
-            VerticalAlignmentType parentVerticalAlignment = VerticalAlignmentType.Center;
+            const VerticalAlignmentType parentVerticalAlignment = VerticalAlignmentType.Center;
             const bool keepContentTogether = false;
             const bool isKeptTogether = false;
             const bool isKeptWithNext = false;
-            var exampleDocWidths = "100 250 100";
+            const string exampleDocWidths = "100 250 100";
             var exampleDocPadding = new MarginInfo
             {
                 Left = 2,
@@ -203,7 +203,7 @@ namespace AsposePdfBuilderExamples
             const bool keepContentTogether = true;
             const bool isKeptTogether = false;
             const bool isKeptWithNext = false;
-            string title = "Simple list example 01";
+            var title = "Simple list example 01";
             string[] descriptions = { "example desc 01", "example desc 02", "example desc 03", "example desc 04" };
             if (descriptions.IsAny())
             {
@@ -440,7 +440,7 @@ namespace AsposePdfBuilderExamples
             DetectFolderExists();
             var info = new DirectoryInfo(PDF_TEMP_FOLDER_PATH);
             var uniqueKey = info.LastWriteTime.Ticks + 1L;
-            var filename = String.Format("{0}_{1}.pdf", prefix, uniqueKey);
+            var filename = string.Format("{0}_{1}.pdf", prefix, uniqueKey);
 
             return PDF_TEMP_FOLDER_PATH + filename;
         }
