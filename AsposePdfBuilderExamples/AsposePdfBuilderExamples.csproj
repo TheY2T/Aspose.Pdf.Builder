@@ -36,8 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Pdf, Version=11.1.1.0, Culture=neutral, PublicKeyToken=6947866647e416ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AsposePdfBuilder\packages\Aspose.Pdf.11.1.1\lib\net40-client\Aspose.Pdf.dll</HintPath>
+      <HintPath>packages\Aspose.Pdf.11.1.1\lib\net40-client\Aspose.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AsposePdfBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Aspose.Pdf.Builder.1.0.0.3\lib\net40\AsposePdfBuilder.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -61,10 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AsposePdfBuilder\AsposePdfBuilder.csproj">
-      <Project>{dcf7e3de-8bc9-4cbe-9f82-e354090aff6e}</Project>
-      <Name>AsposePdfBuilder</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,7 +1,0 @@
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\bin\Release\AsposePdfBuilder.dll
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\bin\Release\AsposePdfBuilder.pdb
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\bin\Release\Aspose.Pdf.dll
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\obj\Release\AsposePdfBuilder.Properties.Resources.resources
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\obj\Release\AsposePdfBuilder.csproj.GenerateResource.Cache
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\obj\Release\AsposePdfBuilder.dll
-C:\Aspose.Pdf.Builder\AsposePdfBuilder\obj\Release\AsposePdfBuilder.pdb
