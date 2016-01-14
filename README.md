@@ -12,6 +12,7 @@ I've removed the packages associated with the solutions as it made the repo unne
 <br/>Invoke the following:
 <br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();```
 <br/>This will creat a pdf defaulted to A4 portrait.
+<br/>
 <br/>If you require a different page setup, invoke the following:
 <br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder(customMargin, height, width);```
 <br/> where customMargin, height and width are all user-specified. 
