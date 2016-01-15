@@ -10,11 +10,11 @@ I've removed the packages associated with the solutions as it made the repo unne
 
 1. <b>Creating a Builder</b>
 <br/>Invoke the following:
-<br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();```
+<br/>```var pdfBuilder = Aspose.Pdf.Builder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();```
 <br/>This will create a pdf defaulted to A4 portrait.
 <br/>
 <br/>If you require a different page setup, invoke the following:
-<br/>```var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder(customMargin, height, width);```
+<br/>```var pdfBuilder = Aspose.Pdf.Builder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder(customMargin, height, width);```
 <br/> where customMargin, height and width are all user-specified. 
 <br/>
 <br/>The *pdfBuilder* contains a number of methods that will allow you to create content with Aspose.Pdf.
@@ -23,7 +23,7 @@ I've removed the packages associated with the solutions as it made the repo unne
 <br/>customMargin is the margin to be set on each page in the PDF. Use ***Aspose.Pdf.Generator.MarginInfo*** to set the margins you want.
 
 2. <b>Setting your own Aspose License</b>
-<br/>```AsposePdfBuilder.Factory.PdfBuilderFactory.SetAsposeLicense(licensePath);```
+<br/>```Aspose.Pdf.Builder.Factory.PdfBuilderFactory.SetAsposeLicense(licensePath);```
 <br/>SetAsposeLicense requires a path to the file that may be located on your machine or on your web server. 
 <br/>You will need to provide the correct path in order for this to work correctly.
 <br/>e.g.
