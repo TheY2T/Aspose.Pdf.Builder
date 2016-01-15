@@ -23,8 +23,8 @@ namespace AsposePdfBuilderExamples
         public void AsposePdfBuilderShouldGenerateExample001()
         {
             // Arrange
-            var exampleHeaderText = "Example Header Text Title";
-            var exampleFooterText = "All Rights Reserved Footer Example © 2016";
+            const string exampleHeaderText = "Example Header Text Title";
+            const string exampleFooterText = "All Rights Reserved Footer Example © 2016";
             var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();
             
             // set license, if available - e.g.
