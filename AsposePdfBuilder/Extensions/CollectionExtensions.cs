@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AsposePdfBuilder.Extensions
+namespace Aspose.Pdf.Builder.Extensions
 {
     public static class CollectionExtensions
     {

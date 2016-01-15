@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Aspose.Pdf.Builder.Builders;
+using Aspose.Pdf.Builder.Extensions;
+using Aspose.Pdf.Builder.Factory;
+using Aspose.Pdf.Builder.Model;
+using Aspose.Pdf.Builder.Properties;
 using Aspose.Pdf.Generator;
-using AsposePdfBuilder.Builders;
-using AsposePdfBuilder.Extensions;
-using AsposePdfBuilder.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AsposePdfBuilderExamples
@@ -25,11 +27,11 @@ namespace AsposePdfBuilderExamples
             // Arrange
             const string exampleHeaderText = "Example Header Text Title";
             const string exampleFooterText = "All Rights Reserved Footer Example © 2016";
-            var pdfBuilder = AsposePdfBuilder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder();
+            var pdfBuilder = PdfBuilderFactory.CreateAsposePdfBuilder();
             
             // set license, if available - e.g.
             var licensePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "App_Data", "Aspose.Pdf.lic");
-            AsposePdfBuilder.Factory.PdfBuilderFactory.SetAsposeLicense(licensePath);
+            PdfBuilderFactory.SetAsposeLicense(licensePath);
             
             // this is optional padding to be applied to all elements
             var parentPadding = new MarginInfo
@@ -70,7 +72,7 @@ namespace AsposePdfBuilderExamples
             // Create Outer Table
             var exampleOuterTable = pdfBuilder.CreateOuterTable(
                 detailsColumnWidths,
-                AsposePdfBuilder.Properties.Resources.ArialFont,
+                Resources.ArialFont,
                 PdfBuilder.DefaultHeadingTwoFontSize,
                 parentPadding,
                 keepContentTogether: true);
@@ -131,7 +133,7 @@ namespace AsposePdfBuilderExamples
                 exampleOuterTable.ColumnWidths,
                 "Example 07 (textarea)",
                 "Description of example 07",
-                AsposePdfBuilder.Properties.Resources.TextAreaColumnWidths);
+                Resources.TextAreaColumnWidths);
             pdfBuilder.BlankRow();
         }
         #endregion
@@ -209,7 +211,7 @@ namespace AsposePdfBuilderExamples
             {
                 // Create an inner table
                 var simpleThreeColumnInnerTable = pdfBuilder.CreateInnerTable(
-                    AsposePdfBuilder.Properties.Resources.ColumnSpanThreeWidth,
+                    Resources.ColumnSpanThreeWidth,
                     isKeptTogether: isKeptTogether,
                     isKeptWithNext: isKeptWithNext,
                     keepContentTogether: keepContentTogether);
@@ -240,7 +242,7 @@ namespace AsposePdfBuilderExamples
             {
                 // Create an inner table
                 var simpleThreeColumnInnerTable = pdfBuilder.CreateInnerTable(
-                    AsposePdfBuilder.Properties.Resources.ColumnSpanThreeWidth,
+                    Resources.ColumnSpanThreeWidth,
                     isKeptTogether: isKeptTogether,
                     isKeptWithNext: isKeptWithNext,
                     keepContentTogether: keepContentTogether);
@@ -310,7 +312,7 @@ namespace AsposePdfBuilderExamples
         {
             var secionFiveExampleTable = pdfBuilder.CreateOuterTable(
                     "140 310",
-                    AsposePdfBuilder.Properties.Resources.ArialFont,
+                    Resources.ArialFont,
                     PdfBuilder.DefaultHeadingTwoFontSize,
                     parentPadding,
                     keepContentTogether: true);

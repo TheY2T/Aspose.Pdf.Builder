@@ -61,13 +61,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AsposePdfBuilder\AsposePdfBuilder.csproj">
-      <Project>{dcf7e3de-8bc9-4cbe-9f82-e354090aff6e}</Project>
-      <Name>AsposePdfBuilder</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\AsposePdfBuilder\Aspose.Pdf.Builder.csproj">
+      <Project>{dcf7e3de-8bc9-4cbe-9f82-e354090aff6e}</Project>
+      <Name>Aspose.Pdf.Builder</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

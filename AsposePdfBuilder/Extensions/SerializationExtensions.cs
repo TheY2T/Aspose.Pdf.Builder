@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace AsposePdfBuilder.Extensions
+namespace Aspose.Pdf.Builder.Extensions
 {
     public static class SerializationExtensions
     {

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Aspose.Pdf.Generator;
-using AsposePdfBuilder.Extensions;
-using AsposePdfBuilder.Model;
-using AsposePdfBuilder.Properties;
+using Aspose.Pdf.Builder.Extensions;
+using Aspose.Pdf.Builder.Model;
 
-namespace AsposePdfBuilder.Builders
+namespace Aspose.Pdf.Builder.Builders
 {
     public class PdfBuilder
     {
@@ -14,7 +13,7 @@ namespace AsposePdfBuilder.Builders
         /// <summary>
         /// <see cref="Pdf"/> Used for all formatting and layout.
         /// </summary>
-        internal Pdf AsposePdf { get; set; }
+        internal Generator.Pdf AsposePdf { get; set; }
 
         /// <summary>
         /// Currently used <see cref="Section"/> for formatting and layout.
@@ -104,154 +103,154 @@ namespace AsposePdfBuilder.Builders
         /// <summary>
         /// Default margin size for any (outer) control.
         /// </summary>
-        public static readonly MarginInfo DefaultOuterPadding =
-            new MarginInfo { Top = 2f, Left = 0f, Right = 2f, Bottom = 2f };
+        public static readonly Generator.MarginInfo DefaultOuterPadding =
+            new Generator.MarginInfo { Top = 2f, Left = 0f, Right = 2f, Bottom = 2f };
 
         /// <summary>
         /// Default margin size for (inner) control.
         /// </summary>
-        public static readonly MarginInfo DefaultInnerPadding =
-            new MarginInfo { Left = 3.5f, Right = 3.5f, Bottom = 3.5f, Top = 3.5f };
+        public static readonly Generator.MarginInfo DefaultInnerPadding =
+            new Generator.MarginInfo { Left = 3.5f, Right = 3.5f, Bottom = 3.5f, Top = 3.5f };
 
         /// <summary>
         /// Default margin size for Sub Heading text row.
         /// </summary>
-        public static readonly MarginInfo DefaultSubHeadingPadding =
-            new MarginInfo { Left = 0f, Right = 4f, Bottom = 0f, Top = 0f };
+        public static readonly Generator.MarginInfo DefaultSubHeadingPadding =
+            new Generator.MarginInfo { Left = 0f, Right = 4f, Bottom = 0f, Top = 0f };
 
         /// <summary>
         /// Default margin size for Sub Heading text bottom padding row.
         /// </summary>
-        public static readonly MarginInfo DefaultSubHeadingBottomPadding =
-            new MarginInfo { Bottom = 3f };
+        public static readonly Generator.MarginInfo DefaultSubHeadingBottomPadding =
+            new Generator.MarginInfo { Bottom = 3f };
 
         /// <summary>
         /// Extra margin size for Outer text bottom padding row.
         /// </summary>
-        public static readonly MarginInfo DefaultOuterBottomPadding =
-            new MarginInfo { Bottom = 8f };
+        public static readonly Generator.MarginInfo DefaultOuterBottomPadding =
+            new Generator.MarginInfo { Bottom = 8f };
 
         /// <summary>
         /// Default margin size for Sub Heading text top & bottom padding row.
         /// </summary>
-        public static readonly MarginInfo DefaultSubHeadingTopBottomPadding =
-            new MarginInfo { Bottom = 3f, Top = 5f };
+        public static readonly Generator.MarginInfo DefaultSubHeadingTopBottomPadding =
+            new Generator.MarginInfo { Bottom = 3f, Top = 5f };
 
         /// <summary>
         /// Default margin size for TextArea Label padding.
         /// </summary>
-        public static readonly MarginInfo DefaultTextAreaLabelPadding =
-            new MarginInfo { Left = 0f, Right = 0f, Bottom = 4f, Top = 0f };
+        public static readonly Generator.MarginInfo DefaultTextAreaLabelPadding =
+            new Generator.MarginInfo { Left = 0f, Right = 0f, Bottom = 4f, Top = 0f };
 
         /// <summary>
         /// Default margin size for TextArea Description padding.
         /// </summary>
-        public static readonly MarginInfo DefaultTextAreaDescriptionPadding =
-            new MarginInfo { Left = 4f, Right = 4f, Bottom = 4f, Top = 4f };
+        public static readonly Generator.MarginInfo DefaultTextAreaDescriptionPadding =
+            new Generator.MarginInfo { Left = 4f, Right = 4f, Bottom = 4f, Top = 4f };
 
         /// <summary>
         /// Default margin size for TextArea Paragraph padding.
         /// </summary>
-        public static readonly MarginInfo DefaultTextAreaParagraphPadding =
-            new MarginInfo { Left = 0f, Right = 0f, Bottom = 4f, Top = 4f };
+        public static readonly Generator.MarginInfo DefaultTextAreaParagraphPadding =
+            new Generator.MarginInfo { Left = 0f, Right = 0f, Bottom = 4f, Top = 4f };
 
         /// <summary>
         /// Margin size for zero padding.
         /// </summary>
-        public static readonly MarginInfo ZeroPadding =
-            new MarginInfo { Left = 0f, Right = 0f, Bottom = 0f, Top = 0f };
+        public static readonly Generator.MarginInfo ZeroPadding =
+            new Generator.MarginInfo { Left = 0f, Right = 0f, Bottom = 0f, Top = 0f };
 
         /// <summary>
         /// Margin size for top padding.
         /// </summary>
-        public static readonly MarginInfo TopPadding = new MarginInfo { Top = 10f };
+        public static readonly Generator.MarginInfo TopPadding = new Generator.MarginInfo { Top = 10f };
 
         /// <summary>
         /// Margin size for a Heading with no obvious sub heading. Typically used in
         /// cases where a row or table is immediately shown without a subheading prior.
         /// </summary>
-        public static readonly MarginInfo HeadingWithNoSubHeadingPadding = new MarginInfo { Bottom = 12f };
+        public static readonly Generator.MarginInfo HeadingWithNoSubHeadingPadding = new Generator.MarginInfo { Bottom = 12f };
 
         /// <summary>
         /// Margin size for a table that needs a 'blank row'. May be used in cases where it is not possible 
         /// to use <see cref="BlankRow(Aspose.Pdf.Generator.BorderSide,Aspose.Pdf.Generator.Table,bool)"/>.
         /// </summary>
-        public static readonly MarginInfo InternalBlankRowPadding = new MarginInfo { Bottom = 20f };
+        public static readonly Generator.MarginInfo InternalBlankRowPadding = new Generator.MarginInfo { Bottom = 20f };
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.HeadingOneFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.HeadingOneFontSize"/>.
         /// </summary>
-        public static readonly float DefaultHeadingOneFontSize = float.Parse(Resources.HeadingOneFontSize);
+        public static readonly float DefaultHeadingOneFontSize = float.Parse(Properties.Resources.HeadingOneFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.HeadingTwoFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.HeadingTwoFontSize"/>.
         /// </summary>
-        public static readonly float DefaultHeadingTwoFontSize = float.Parse(Resources.HeadingTwoFontSize);
+        public static readonly float DefaultHeadingTwoFontSize = float.Parse(Properties.Resources.HeadingTwoFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.HeadingThreeFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.HeadingThreeFontSize"/>.
         /// </summary>
-        public static readonly float DefaultHeadingThreeFontSize = float.Parse(Resources.HeadingThreeFontSize);
+        public static readonly float DefaultHeadingThreeFontSize = float.Parse(Properties.Resources.HeadingThreeFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.HeadingFourFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.HeadingFourFontSize"/>.
         /// </summary>
-        public static readonly float DefaultHeadingFourFontSize = float.Parse(Resources.HeadingFourFontSize);
+        public static readonly float DefaultHeadingFourFontSize = float.Parse(Properties.Resources.HeadingFourFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.BodyFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.BodyFontSize"/>.
         /// </summary>
-        public static readonly float DefaultInnerBodyFontSize = float.Parse(Resources.BodyFontSize);
+        public static readonly float DefaultInnerBodyFontSize = float.Parse(Properties.Resources.BodyFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.BulletPointFontSize"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.BulletPointFontSize"/>.
         /// </summary>
-        public static readonly float DefaultBulletPointFontSize = float.Parse(Resources.BulletPointFontSize);
+        public static readonly float DefaultBulletPointFontSize = float.Parse(Properties.Resources.BulletPointFontSize);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.ColumnSpanThreeWidth"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.ColumnSpanThreeWidth"/>.
         /// </summary>
         public const string DefaultColumnSpanThreeWidth = "350";
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.TextAreaColumnWidths"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.TextAreaColumnWidths"/>.
         /// </summary>
         public const string DefaultTextAreaColumnWidth = "450";
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.DefaultColumnSpanOneWidth"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.DefaultColumnSpanOneWidth"/>.
         /// </summary>
         public const string DefaultColumnSpanOneWidth = "105";
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.TextAreaRowHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.TextAreaRowHeight"/>.
         /// </summary>
-        public static readonly float DefaultTextAreaRowHeight = float.Parse(Resources.TextAreaRowHeight);
+        public static readonly float DefaultTextAreaRowHeight = float.Parse(Properties.Resources.TextAreaRowHeight);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.BlankRowHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.BlankRowHeight"/>.
         /// </summary>
-        public static readonly float DefaultBlankRowHeight = float.Parse(Resources.BlankRowHeight);
+        public static readonly float DefaultBlankRowHeight = float.Parse(Properties.Resources.BlankRowHeight);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.BlankRowContactsHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.BlankRowContactsHeight"/>.
         /// </summary>
-        public static readonly float DefaultBlankRowContactsHeight = float.Parse(Resources.BlankRowContactsHeight);
+        public static readonly float DefaultBlankRowContactsHeight = float.Parse(Properties.Resources.BlankRowContactsHeight);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.ShortBlankRowHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.ShortBlankRowHeight"/>.
         /// </summary>
-        public static readonly float ShortBlankRowHeight = float.Parse(Resources.ShortBlankRowHeight);
+        public static readonly float ShortBlankRowHeight = float.Parse(Properties.Resources.ShortBlankRowHeight);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.BlankRowTextAreaHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.BlankRowTextAreaHeight"/>.
         /// </summary>
-        public static readonly float DefaultBlankRowTextAreaHeight = float.Parse(Resources.BlankRowTextAreaHeight);
+        public static readonly float DefaultBlankRowTextAreaHeight = float.Parse(Properties.Resources.BlankRowTextAreaHeight);
 
         /// <summary>
-        /// Compiler ready default for <see cref="Resources.TableBlankRowHeight"/>.
+        /// Compiler ready default for <see cref="Properties.Resources.TableBlankRowHeight"/>.
         /// </summary>
-        public static readonly float DefaultTableBlankRowHeight = float.Parse(Resources.TableBlankRowHeight);
+        public static readonly float DefaultTableBlankRowHeight = float.Parse(Properties.Resources.TableBlankRowHeight);
 
         #endregion
 
@@ -275,7 +274,7 @@ namespace AsposePdfBuilder.Builders
         /// <param name="pageMargin">pageMargin (in cm)</param>
         /// <param name="height">height (in cm)</param>
         /// <param name="width">width (in cm)</param>
-        public PdfBuilder(MarginInfo pageMargin, float height, float width)
+        public PdfBuilder(Generator.MarginInfo pageMargin, float height, float width)
         {
             AsposePdf = CreatePdfAndPageLayoutWithUserDefinedValues(pageMargin, height, width);
             Section = AsposePdf.Sections.Add();
@@ -287,17 +286,17 @@ namespace AsposePdfBuilder.Builders
         /// Creates an A4 pdf with respective default margins of 2.54cm.
         /// </summary>
         /// <returns>pdf</returns>
-        private static Pdf CreateDefaultA4PdfAndPageLayout()
+        private static Generator.Pdf CreateDefaultA4PdfAndPageLayout()
         {
             // default margin is 2.54cm - standard for A4 documents.
-            var defaultMargin = float.Parse(Resources.OneCm) * DefaultPageMarginInCm;
-            return new Pdf
+            var defaultMargin = float.Parse(Properties.Resources.OneCm) * DefaultPageMarginInCm;
+            return new Generator.Pdf
             {
                 PageSetup =
                 {
-                    PageHeight = PageSize.A4Height,
-                    PageWidth = PageSize.A4Width,
-                    Margin = new MarginInfo
+                    PageHeight = Generator.PageSize.A4Height,
+                    PageWidth = Generator.PageSize.A4Width,
+                    Margin = new Generator.MarginInfo
                     {
                         Bottom = defaultMargin,
                         Left = defaultMargin,
@@ -310,18 +309,18 @@ namespace AsposePdfBuilder.Builders
 
         /// <summary>
         /// Creates a pdf with user specified margins and page width / height.
-        /// NOTE: Please use <see cref="PageSize"/> to get desired the page layout height and width.
+        /// NOTE: Please use <see cref="Generator.PageSize"/> to get desired the page layout height and width.
         /// </summary>
         /// <returns>pdf</returns>
-        private static Pdf CreatePdfAndPageLayoutWithUserDefinedValues(MarginInfo pageMargin, float height, float width)
+        private static Generator.Pdf CreatePdfAndPageLayoutWithUserDefinedValues(Generator.MarginInfo pageMargin, float height, float width)
         {
-            return new Pdf
+            return new Generator.Pdf
             {
                 PageSetup =
                 {
                     PageHeight = height,
                     PageWidth = width,
-                    Margin = new MarginInfo
+                    Margin = new Generator.MarginInfo
                     {
                         Bottom = pageMargin.Bottom,
                         Left = pageMargin.Left,
@@ -350,7 +349,7 @@ namespace AsposePdfBuilder.Builders
         #region Header & Footer Methods
 
         /// <summary>
-        /// Creates a Header and Footer <see cref="HeaderFooter"/> for the specified section at hand.
+        /// Creates a Header and Footer <see cref="Generator.HeaderFooter"/> for the specified section at hand.
         /// </summary>
         /// <param name="section">section</param>
         /// <param name="headerText">headerText</param>
@@ -358,10 +357,10 @@ namespace AsposePdfBuilder.Builders
         public void CreateHeaderAndFooterForPdfForSection(Section section, string headerText, string footerText)
         {
             // Create a Header Section of the PDF file
-            var header = new HeaderFooter(section)
+            var header = new Generator.HeaderFooter(section)
             {
                 // Add Distance From Edge Property to 1.27cm
-                DistanceFromEdge = float.Parse(Resources.OneCm) * A4PageDistanceFromEdge,
+                DistanceFromEdge = float.Parse(Properties.Resources.OneCm) * A4PageDistanceFromEdge,
             };
 
             // set Odd and Even Headers
@@ -369,20 +368,20 @@ namespace AsposePdfBuilder.Builders
             section.EvenHeader = header;
 
             // Set with column widths & default cell border of the table
-            var headerTable = new Table
+            var headerTable = new Generator.Table
             {
-                DefaultCellBorder = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
+                DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
                 ColumnWidths = section.IsLandscape
-                    ? Resources.HeaderRowLandscapeColumnWidths
-                    : Resources.HeaderRowPortraitColumnWidths
+                    ? Properties.Resources.HeaderRowLandscapeColumnWidths
+                    : Properties.Resources.HeaderRowPortraitColumnWidths
 
             };
             header.Paragraphs.Add(headerTable);
 
             // Create header row and cell content
             var headerRow = headerTable.Rows.Add();
-            headerRow.DefaultCellTextInfo.FontName = Resources.HelveticaFont;
-            headerRow.DefaultCellTextInfo.FontSize = int.Parse(Resources.HeaderFontSize);
+            headerRow.DefaultCellTextInfo.FontName = Properties.Resources.HelveticaFont;
+            headerRow.DefaultCellTextInfo.FontSize = int.Parse(Properties.Resources.HeaderFontSize);
 
             // Set the vertical alignment of the cell as center aligned
             var headerCell = headerRow.Cells.Add(headerText);
@@ -394,10 +393,10 @@ namespace AsposePdfBuilder.Builders
             //=====================================================//
 
             // Create Footer Section
-            var footer = new HeaderFooter(section)
+            var footer = new Generator.HeaderFooter(section)
             {
                 //Add Distance From Edge Property to 1.27cm
-                DistanceFromEdge = float.Parse(Resources.OneCm) * A4PageDistanceFromEdge
+                DistanceFromEdge = float.Parse(Properties.Resources.OneCm) * A4PageDistanceFromEdge
             };
 
             // set Odd and Even Headers
@@ -405,12 +404,12 @@ namespace AsposePdfBuilder.Builders
             section.EvenFooter = footer;
 
             // Add footer table
-            var footerTable = new Table
+            var footerTable = new Generator.Table
             {
-                DefaultCellBorder = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
+                DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
                 ColumnWidths = section.IsLandscape
-                    ? Resources.FooterRowLandscapeColumnWidths
-                    : Resources.FooterRowPortraitColumnWidths
+                    ? Properties.Resources.FooterRowLandscapeColumnWidths
+                    : Properties.Resources.FooterRowPortraitColumnWidths
             };
 
             // Set with column widths of the table
@@ -418,8 +417,8 @@ namespace AsposePdfBuilder.Builders
 
             // Add footer row
             var footerRow = footerTable.Rows.Add();
-            footerRow.DefaultCellTextInfo.FontName = Resources.HelveticaFont;
-            footerRow.DefaultCellTextInfo.FontSize = int.Parse(Resources.FooterRowFontSize);
+            footerRow.DefaultCellTextInfo.FontName = Properties.Resources.HelveticaFont;
+            footerRow.DefaultCellTextInfo.FontSize = int.Parse(Properties.Resources.FooterRowFontSize);
 
             // Add foot text
             var footerCell = footerRow.Cells.Add(footerText);
@@ -484,32 +483,32 @@ namespace AsposePdfBuilder.Builders
         /// <param name="table">table</param>
         /// <param name="isShortRow">isShortRow</param>
         public void BlankRow(
-            BorderSide border = BorderSide.None,
-            Table table = null,
+            Generator.BorderSide border = Generator.BorderSide.None,
+            Generator.Table table = null,
             bool isShortRow = false)
         {
             if (table == null)
             {
-                table = new Table { IsFixedRowHeightContentClip = true };
+                table = new Generator.Table { IsFixedRowHeightContentClip = true };
                 Section.Paragraphs.Add(table);
                 var row = table.Rows.Add();
                 row.FixedRowHeight = !isShortRow
                     ? DefaultBlankRowHeight
                     : ShortBlankRowHeight;
-                row.Border = new BorderInfo((int)border, DefaultBorderSize);
+                row.Border = new Generator.BorderInfo((int)border, DefaultBorderSize);
             }
             else
             {
                 // add blank row to existing table
                 var row = table.Rows.Add();
                 var cell = row.Cells.Add();
-                var blankRowTable = new Table(cell) { IsFixedRowHeightContentClip = true };
+                var blankRowTable = new Generator.Table(cell) { IsFixedRowHeightContentClip = true };
                 cell.Paragraphs.Add(blankRowTable);
                 row = blankRowTable.Rows.Add();
                 row.FixedRowHeight = !isShortRow
                     ? DefaultBlankRowHeight
                     : ShortBlankRowHeight;
-                row.Border = new BorderInfo((int)border, DefaultBorderSize);
+                row.Border = new Generator.BorderInfo((int)border, DefaultBorderSize);
             }
         }
 
@@ -522,19 +521,19 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isShortRow">isShortRow</param>
         /// <param name="border">border</param>
         public void BlankRow(
-            Cell parentCell,
+            Generator.Cell parentCell,
             float fixedRowHeight = 0.0f,
             bool isShortRow = false,
-            BorderSide border = BorderSide.None)
+            Generator.BorderSide border = Generator.BorderSide.None)
         {
-            var table = new Table { IsFixedRowHeightContentClip = true };
+            var table = new Generator.Table { IsFixedRowHeightContentClip = true };
             if (fixedRowHeight > 0.0f)
             {
                 var row = table.Rows.Add();
                 row.FixedRowHeight = !isShortRow
                     ? DefaultBlankRowTextAreaHeight
                     : ShortBlankRowHeight;
-                row.Border = new BorderInfo((int)border, DefaultBorderSize);
+                row.Border = new Generator.BorderInfo((int)border, DefaultBorderSize);
             }
             parentCell.Paragraphs.Add(table);
         }
@@ -544,7 +543,7 @@ namespace AsposePdfBuilder.Builders
         /// </summary>
         /// <param name="table">table</param>
         /// <param name="isShortRow">isShortRow</param>
-        public void BlankRow(Table table, bool isShortRow = false)
+        public void BlankRow(Generator.Table table, bool isShortRow = false)
         {
             if (table == null)
             {
@@ -562,7 +561,7 @@ namespace AsposePdfBuilder.Builders
 
         /// <summary>
         /// Create a sub heading row. User must specify <see cref="subHeadingText"/>
-        /// and a <see cref="Table"/> to add the row to.
+        /// and a <see cref="Generator.Table"/> to add the row to.
         /// If the user specifies <see cref="isFullPageText"/> the sub heading will be rendered
         /// across the entire page and not to the default of 'three' columns (four is total).
         /// </summary>
@@ -572,24 +571,24 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isFullPageText">isFullPageText</param>
         public void CreateSubHeadingRow(
             string subHeadingText,
-            Table table,
-            MarginInfo margins = null,
+            Generator.Table table,
+            Generator.MarginInfo margins = null,
             bool isFullPageText = false)
         {
             var subHeadingTable = !isFullPageText
                 ? table
-                : new Table { ColumnWidths = Resources.DefaultFullWidth };
+                : new Generator.Table { ColumnWidths = Properties.Resources.DefaultFullWidth };
             var row = subHeadingTable.Rows.Add();
             var cell = row.Cells.Add(string.Empty);
             cell.ColumnsSpan = DefaultHeaderColumnSpan;
             cell.Padding = DefaultSubHeadingPadding;
-            var paragraph = new Text(subHeadingText)
+            var paragraph = new Generator.Text(subHeadingText)
             {
                 TextInfo =
                 {
-                    FontName = Resources.ArialFont,
-                    FontSize = int.Parse(Resources.HeadingTwoFontSize),
-                    Color = new Color(Resources.BlackColor),
+                    FontName = Properties.Resources.ArialFont,
+                    FontSize = int.Parse(Properties.Resources.HeadingTwoFontSize),
+                    Color = new Generator.Color(Properties.Resources.BlackColor),
                     IsTrueTypeFontBold = true
                 }
             };
@@ -616,12 +615,12 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isKeptWithNext">isKeptWithNext</param>
         /// <param name="columnSpan">columnSpan</param>
         /// <returns>inserted table</returns>
-        public Table AddNestedTable(
-            Table parentTable,
+        public Generator.Table AddNestedTable(
+            Generator.Table parentTable,
             string columnWidths,
             string font,
             float fontSize,
-            MarginInfo defaultPadding = null,
+            Generator.MarginInfo defaultPadding = null,
             bool keepContentTogether = false,
             bool isKeptTogether = false,
             bool isKeptWithNext = false,
@@ -631,7 +630,7 @@ namespace AsposePdfBuilder.Builders
             var cell = row.Cells.Add();
 
             cell.ColumnsSpan = columnSpan;
-            var table = new Table(cell)
+            var table = new Generator.Table(cell)
             {
                 ColumnWidths = columnWidths,
                 DefaultCellPadding = defaultPadding ?? DefaultOuterPadding,
@@ -645,7 +644,7 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Create a standard <see cref="Table"/> from a given <see cref="parentTable"/>.
+        /// Create a standard <see cref="Generator.Table"/> from a given <see cref="parentTable"/>.
         /// This Table will be stored in a new row and harbouring cell from
         /// <see cref="parentTable"/>, the user must specify <see cref="columnWidths"/> 
         /// and the new table column widths will be adjusted to these values.
@@ -659,12 +658,12 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isKeptWithNext">isKeptWithNext</param>
         /// <param name="keepContentTogether">keepContentTogether</param>
         /// <returns>row</returns>
-        public Table AddNestedTableFromTable(
-            Table parentTable,
+        public Generator.Table AddNestedTableFromTable(
+            Generator.Table parentTable,
             string columnWidths,
             string font,
             float fontSize,
-            MarginInfo parentPadding = null,
+            Generator.MarginInfo parentPadding = null,
             bool isKeptTogether = false,
             bool isKeptWithNext = false,
             bool keepContentTogether = false)
@@ -675,7 +674,7 @@ namespace AsposePdfBuilder.Builders
             cell.ColumnsSpan = GetColumnSpan(parentTable);
             // Set the default cell padding to parentPadding definition
             row.DefaultRowCellPadding = parentPadding ?? DefaultInnerPadding;
-            var table = new Table(cell)
+            var table = new Generator.Table(cell)
             {
                 ColumnWidths = columnWidths,
                 DefaultCellPadding = parentPadding ?? DefaultOuterPadding,
@@ -689,7 +688,7 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Create a standard <see cref="Table"/> from a given <see cref="row"/>.
+        /// Create a standard <see cref="Generator.Table"/> from a given <see cref="row"/>.
         /// This Table will be stored in a new row and harbouring cell from
         /// <see cref="row"/>, the user must specify <see cref="columnWidths"/> 
         /// and the new table column widths will be adjusted to these values.
@@ -703,12 +702,12 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isKeptWithNext">isKeptWithNext</param>
         /// <param name="keepContentTogether">keepContentTogether</param>
         /// <returns>row</returns>
-        public Table AddNestedTableFromRow(
-            Row row,
+        public Generator.Table AddNestedTableFromRow(
+            Generator.Row row,
             string columnWidths,
             string font,
             float fontSize,
-            MarginInfo parentPadding = null,
+            Generator.MarginInfo parentPadding = null,
             bool isKeptTogether = false,
             bool isKeptWithNext = false,
             bool keepContentTogether = false)
@@ -717,7 +716,7 @@ namespace AsposePdfBuilder.Builders
             cell.IsNoBorder = true;
             // Set the default cell padding to parentPadding definition
             row.DefaultRowCellPadding = parentPadding ?? DefaultInnerPadding;
-            var table = new Table(cell)
+            var table = new Generator.Table(cell)
             {
                 ColumnWidths = columnWidths,
                 DefaultCellPadding = parentPadding ?? DefaultOuterPadding,
@@ -745,18 +744,18 @@ namespace AsposePdfBuilder.Builders
             string description,
             string bulletStyle = "",
             int level = DefaultStyleLevel,
-            Table parentTable = null)
+            Generator.Table parentTable = null)
         {
-            var heading = new Heading(AsposePdf, new Section(), DefaultStyleLevel)
+            var heading = new Generator.Heading(AsposePdf, new Section(), DefaultStyleLevel)
             {
                 BulletOffset = DefaultBulletPointOffset,
                 UserLabel = !string.IsNullOrEmpty(bulletStyle)
                     ? bulletStyle
-                    : Resources.DefaultBulletStyle,
+                    : Properties.Resources.DefaultBulletStyle,
                 LabelFontSize = DefaultBulletPointFontSize,
                 TextInfo =
                 {
-                    FontName = Resources.ArialFont,
+                    FontName = Properties.Resources.ArialFont,
                     FontSize = DefaultHeadingTwoFontSize
                 }
             };
@@ -783,21 +782,21 @@ namespace AsposePdfBuilder.Builders
         /// <param name="parentTable">parentTable</param>
         public void CreateNumberedStyle(
             string description,
-            Table parentTable,
+            Generator.Table parentTable,
             int level = DefaultStyleLevel)
         {
             // create heading object and add set its level
-            var heading = new Heading(AsposePdf, new Section(), level)
+            var heading = new Generator.Heading(AsposePdf, new Section(), level)
             {
                 IsAutoSequence = true,
                 IsInList = true,
                 TextInfo =
                 {
-                    FontName = Resources.ArialFont,
+                    FontName = Properties.Resources.ArialFont,
                     FontSize = DefaultHeadingTwoFontSize
                 },
                 LabelPattern = ".",
-                LabelFontName = Resources.ArialFont,
+                LabelFontName = Properties.Resources.ArialFont,
                 LabelFontSize = DefaultHeadingTwoFontSize,
                 HeadingType = HeadingType.Arab,
             };
@@ -805,9 +804,9 @@ namespace AsposePdfBuilder.Builders
             heading.Segments.Add(segment);
             segment.Content = description;
 
-            var headingTable = new Table
+            var headingTable = new Generator.Table
             {
-                ColumnWidths = Resources.ColumnSpanFourWidth
+                ColumnWidths = Properties.Resources.ColumnSpanFourWidth
             };
             var headingTableRow = headingTable.Rows.Add();
             var headingTableRowCell = headingTableRow.Cells.Add();
@@ -822,15 +821,15 @@ namespace AsposePdfBuilder.Builders
         /// <summary>
         /// Creates a checkbox.
         /// </summary>
-        private Heading CreateCheckBox()
+        private Generator.Heading CreateCheckBox()
         {
-            var checkbox = new Heading(AsposePdf, new Section(), DefaultStyleLevel)
+            var checkbox = new Generator.Heading(AsposePdf, new Section(), DefaultStyleLevel)
             {
                 BulletOffset = DefaultCheckBoxOffset,
-                UserLabel = Resources.DefaultBulletFiveStyle,
+                UserLabel = Properties.Resources.DefaultBulletFiveStyle,
                 TextInfo =
                 {
-                    FontName = Resources.ArialFont,
+                    FontName = Properties.Resources.ArialFont,
                     FontSize = DefaultHeadingTwoFontSize
                 }
             };
@@ -851,27 +850,27 @@ namespace AsposePdfBuilder.Builders
         public void CreateLabelWithCheckBox(
             string label,
             string columnWidths = "",
-            Table parentTable = null)
+            Generator.Table parentTable = null)
         {
             var checkbox = CreateCheckBox();
             if (parentTable != null)
             {
-                var table = new Table
+                var table = new Generator.Table
                 {
                     ColumnWidths = !string.IsNullOrEmpty(columnWidths)
                         ? columnWidths
-                        : Resources.CheckBoxColumnWidths
+                        : Properties.Resources.CheckBoxColumnWidths
                 };
                 var row = table.Rows.Add();
                 var cellOne = row.Cells.Add(label);
                 cellOne.Padding = DefaultInnerPadding;
                 cellOne.DefaultCellTextInfo.IsTrueTypeFontBold = true;
-                cellOne.DefaultCellTextInfo.FontName = Resources.ArialFont;
+                cellOne.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
                 cellOne.DefaultCellTextInfo.FontSize = DefaultHeadingTwoFontSize;
                 var cellTwo = row.Cells.Add();
                 cellTwo.Padding = DefaultInnerPadding;
                 cellTwo.DefaultCellTextInfo.IsTrueTypeFontBold = true;
-                cellTwo.DefaultCellTextInfo.FontName = Resources.ArialFont;
+                cellTwo.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
                 cellTwo.DefaultCellTextInfo.FontSize = DefaultHeadingTwoFontSize;
                 cellTwo.Paragraphs.Add(checkbox);
 
@@ -901,26 +900,26 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isKeptTogether">isKeptTogether</param>
         /// <param name="parentTable">parentTable</param>
         /// <returns>Outer Table</returns>
-        public Table CreateOuterTable(
+        public Generator.Table CreateOuterTable(
             string columnWidths,
             string font,
             float fontSize,
-            MarginInfo defaultPadding = null,
+            Generator.MarginInfo defaultPadding = null,
             bool keepContentTogether = false,
             bool isNewPage = false,
             bool isKeptWithNext = false,
             bool isKeptTogether = false,
-            Table parentTable = null)
+            Generator.Table parentTable = null)
         {
             // attach to parent table
             if (parentTable != null)
             {
                 var row = parentTable.Rows.Add();
-                var table = new Table
+                var table = new Generator.Table
                 {
                     ColumnWidths = columnWidths,
-                    DefaultCellBorder = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
-                    Border = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
+                    DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
+                    Border = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
                     DefaultCellPadding = defaultPadding ?? DefaultOuterPadding,
                     DefaultCellTextInfo = { FontName = font, FontSize = fontSize },
                     IsBroken = !keepContentTogether,
@@ -937,11 +936,11 @@ namespace AsposePdfBuilder.Builders
             }
             else
             {
-                var table = new Table
+                var table = new Generator.Table
                 {
                     ColumnWidths = columnWidths,
-                    DefaultCellBorder = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
-                    Border = new BorderInfo((int)BorderSide.None, DefaultBorderSize),
+                    DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
+                    Border = new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
                     DefaultCellTextInfo = { FontName = font, FontSize = fontSize },
                     IsBroken = !keepContentTogether,
                     IsFirstParagraph = isNewPage,
@@ -965,18 +964,18 @@ namespace AsposePdfBuilder.Builders
         /// <param name="padding">padding</param>
         /// <param name="useSpacing">useSpacing</param>
         public void CreateOuterTableRowHeading(
-            Table parentTable,
+            Generator.Table parentTable,
             string title,
             int columnSpan = DefaultHeaderColumnSpan,
-            MarginInfo padding = null,
+            Generator.MarginInfo padding = null,
             bool useSpacing = false)
         {
             var row = parentTable.Rows.Add();
             var cell = row.Cells.Add(title);
             cell.ColumnsSpan = columnSpan;
-            cell.DefaultCellTextInfo.FontName = Resources.ArialFont;
-            cell.DefaultCellTextInfo.FontSize = int.Parse(Resources.HeadingOneFontSize);
-            cell.DefaultCellTextInfo.Color = new Color(Resources.HeaderTableBackgroundColor);
+            cell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
+            cell.DefaultCellTextInfo.FontSize = int.Parse(Properties.Resources.HeadingOneFontSize);
+            cell.DefaultCellTextInfo.Color = new Generator.Color(Properties.Resources.HeaderTableBackgroundColor);
             cell.DefaultCellTextInfo.IsTrueTypeFontBold = true;
             if (padding != null)
             {
@@ -1000,22 +999,22 @@ namespace AsposePdfBuilder.Builders
         /// <param name="descriptionAlignment">descriptionAlignment</param>
         /// <param name="useSpacing">useSpacing</param>
         public void CreateOuterTableRowCells(
-            Row row,
+            Generator.Row row,
             string title,
             string fullDescription,
             int columnSpan = DefaultHeaderColumnSpan,
-            MarginInfo padding = null,
+            Generator.MarginInfo padding = null,
             AlignmentType descriptionAlignment = AlignmentType.Left,
             bool useSpacing = false)
         {
             var labelCell = row.Cells.Add(title);
-            var descriptionColor = new Color(Resources.GreyColor);
+            var descriptionColor = new Generator.Color(Properties.Resources.GreyColor);
             labelCell.DefaultCellTextInfo.Color = descriptionColor;
             labelCell.DefaultCellTextInfo.FontSize = DefaultHeadingTwoFontSize;
             labelCell.DefaultCellTextInfo.IsTrueTypeFontBold = true;
 
             var descriptionCell = row.Cells.Add(fullDescription);
-            descriptionCell.DefaultCellTextInfo.FontName = Resources.ArialFont;
+            descriptionCell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
             descriptionCell.DefaultCellTextInfo.FontSize = DefaultHeadingTwoFontSize;
             descriptionCell.DefaultCellTextInfo.Color = descriptionColor;
             descriptionCell.Alignment = descriptionAlignment;
@@ -1055,19 +1054,19 @@ namespace AsposePdfBuilder.Builders
         /// <param name="isKeptWithNext">isKeptWithNext</param>
         /// <param name="isKeptTogether">isKeptTogether</param>
         /// <returns>Inner table</returns>
-        public Table CreateInnerTable(
+        public Generator.Table CreateInnerTable(
             string resourceColumnWidths,
-            Table parentTable = null,
-            BorderSide borderSide = BorderSide.All,
+            Generator.Table parentTable = null,
+            Generator.BorderSide borderSide = Generator.BorderSide.All,
             string fontName = "",
             float fontSize = 0f,
             AlignmentType alignment = AlignmentType.Left,
-            MarginInfo padding = null,
+            Generator.MarginInfo padding = null,
             bool keepContentTogether = false,
             bool isKeptWithNext = false,
             bool isKeptTogether = false)
         {
-            Table table;
+            Generator.Table table;
             if (parentTable != null)
             {
                 var row = parentTable.Rows.Add();
@@ -1076,12 +1075,12 @@ namespace AsposePdfBuilder.Builders
                     row.DefaultRowCellPadding = padding;
                 }
                 var cell = row.Cells.Add();
-                table = new Table(cell)
+                table = new Generator.Table(cell)
                 {
                     ColumnWidths = resourceColumnWidths,
-                    DefaultCellBorder = borderSide != BorderSide.None
-                        ? new BorderInfo((int)borderSide, DefaultBorderSize)
-                        : new BorderInfo((int)BorderSide.None),
+                    DefaultCellBorder = borderSide != Generator.BorderSide.None
+                        ? new Generator.BorderInfo((int)borderSide, DefaultBorderSize)
+                        : new Generator.BorderInfo((int)Generator.BorderSide.None),
                     DefaultCellTextInfo =
                     {
                         FontSize = fontSize > 0
@@ -1089,7 +1088,7 @@ namespace AsposePdfBuilder.Builders
                             : DefaultInnerBodyFontSize,
                         FontName = !string.IsNullOrEmpty(fontName)
                             ? fontName
-                            : Resources.ArialFont
+                            : Properties.Resources.ArialFont
                     },
                     Alignment = alignment,
                     IsBroken = !keepContentTogether,
@@ -1102,12 +1101,12 @@ namespace AsposePdfBuilder.Builders
             }
             else
             {
-                table = new Table
+                table = new Generator.Table
                 {
                     ColumnWidths = resourceColumnWidths,
-                    DefaultCellBorder = borderSide != BorderSide.None
-                        ? new BorderInfo((int)borderSide, DefaultBorderSize)
-                        : new BorderInfo((int)BorderSide.None, DefaultBorderSize),
+                    DefaultCellBorder = borderSide != Generator.BorderSide.None
+                        ? new Generator.BorderInfo((int)borderSide, DefaultBorderSize)
+                        : new Generator.BorderInfo((int)Generator.BorderSide.None, DefaultBorderSize),
                     DefaultCellTextInfo =
                     {
                         FontSize = fontSize > 0
@@ -1115,7 +1114,7 @@ namespace AsposePdfBuilder.Builders
                             : DefaultInnerBodyFontSize,
                         FontName = !string.IsNullOrEmpty(fontName)
                             ? fontName
-                            : Resources.ArialFont
+                            : Properties.Resources.ArialFont
                     },
                     Alignment = alignment,
                     IsBroken = !keepContentTogether,
@@ -1133,13 +1132,13 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Creates and formats a 'Header' styled <see cref="Cell"/> for a 
+        /// Creates and formats a 'Header' styled <see cref="Generator.Cell"/> for a 
         /// given <see cref="row"/> and <see cref="headerCells"/> provided.
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="headerCells">headerCells</param>
         public void CreateInnerTableHeaderCells(
-            Row row,
+            Generator.Row row,
             HeaderCell[] headerCells)
         {
             foreach (var headerCell in headerCells)
@@ -1149,23 +1148,23 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Creates and formats a 'Header' styled <see cref="Cell"/> 
+        /// Creates and formats a 'Header' styled <see cref="Generator.Cell"/> 
         /// for a given <see cref="row"/> and <see cref="headerCell"/>.
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="headerCell">headerCell</param>
         public void CreateInnerTableHeaderCell(
-            Row row,
+            Generator.Row row,
             HeaderCell headerCell)
         {
             row.IsBroken = false;
             var cell = row.Cells.Add(headerCell.Content);
             cell.Padding = DefaultInnerPadding;
             cell.BackgroundColor = !string.IsNullOrEmpty(headerCell.BackgroundColor)
-                ? new Color(headerCell.BackgroundColor)
-                : new Color(Resources.HeaderTableBackgroundColor);
-            cell.DefaultCellTextInfo.Color = new Color(Resources.WhiteColor);
-            cell.DefaultCellTextInfo.FontName = Resources.ArialFont;
+                ? new Generator.Color(headerCell.BackgroundColor)
+                : new Generator.Color(Properties.Resources.HeaderTableBackgroundColor);
+            cell.DefaultCellTextInfo.Color = new Generator.Color(Properties.Resources.WhiteColor);
+            cell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
             cell.DefaultCellTextInfo.FontSize = DefaultInnerBodyFontSize;
             cell.DefaultCellTextInfo.IsTrueTypeFontBold = true;
             cell.DefaultCellTextInfo.IsUnicode = true;
@@ -1175,9 +1174,9 @@ namespace AsposePdfBuilder.Builders
             {
                 cell.Alignment = AlignmentType.Center;
             }
-            if (headerCell.Border != BorderSide.None)
+            if (headerCell.Border != Generator.BorderSide.None)
             {
-                cell.Border = new BorderInfo((int)headerCell.Border, DefaultBorderSize);
+                cell.Border = new Generator.BorderInfo((int)headerCell.Border, DefaultBorderSize);
             }
             if (headerCell.RowSpan > 0)
             {
@@ -1186,7 +1185,7 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Creates & formats a nested inner table <see cref="Cell"/> to vertically align content within it.
+        /// Creates & formats a nested inner table <see cref="Generator.Cell"/> to vertically align content within it.
         /// E.g. Catchment Areas (header) --> item 01
         ///                               --> item 02
         ///                               --> item 03 etc.
@@ -1197,19 +1196,19 @@ namespace AsposePdfBuilder.Builders
         /// <param name="fontSize">fontSize</param>
         /// <param name="parentPadding">parentPadding</param>
         public void CreateNestedInnerTableCell(
-            Row row,
+            Generator.Row row,
             IEnumerable<string> descriptions,
             string fontName = "",
             int fontSize = 0,
-            MarginInfo parentPadding = null)
+            Generator.MarginInfo parentPadding = null)
         {
-            var table = new Table
+            var table = new Generator.Table
             {
                 DefaultCellTextInfo =
                 {
                     FontName = !string.IsNullOrEmpty(fontName)
                     ? fontName
-                    : Resources.ArialFont,
+                    : Properties.Resources.ArialFont,
                     FontSize = fontSize > 0
                         ? fontSize
                         : DefaultInnerBodyFontSize
@@ -1225,16 +1224,16 @@ namespace AsposePdfBuilder.Builders
 
             // add content back into parent cell
             var parentCell = row.Cells.Add();
-            parentCell.Border = new BorderInfo((int)BorderSide.All, DefaultBorderSize);
+            parentCell.Border = new Generator.BorderInfo((int)Generator.BorderSide.All, DefaultBorderSize);
             parentCell.Padding = parentPadding ?? DefaultInnerPadding;
-            parentCell.BackgroundColor = new Color(Resources.InnerTableColor);
+            parentCell.BackgroundColor = new Generator.Color(Properties.Resources.InnerTableColor);
             parentCell.Paragraphs.Add(table);
         }
 
         /// <summary>
         /// Create a standard 'Inner Table Row' for a given <see cref="table"/>.
-        /// NOTE: Remember to never put padding on a <see cref="Table"/> object, 
-        /// it messes with the content layout inside <see cref="Row"/> objects etc.
+        /// NOTE: Remember to never put padding on a <see cref="Generator.Table"/> object, 
+        /// it messes with the content layout inside <see cref="Generator.Row"/> objects etc.
         /// </summary>
         /// <param name="table">table</param>
         /// <param name="parentPadding">parentPadding</param>
@@ -1242,9 +1241,9 @@ namespace AsposePdfBuilder.Builders
         /// <param name="backgroundColor">backgroundColor</param>
         /// <param name="withBorder">withBorder</param>
         /// <returns>row</returns>
-        public Row CreateInnerTableRow(
-            Table table,
-            MarginInfo parentPadding = null,
+        public Generator.Row CreateInnerTableRow(
+            Generator.Table table,
+            Generator.MarginInfo parentPadding = null,
             VerticalAlignmentType verticalAlignment = VerticalAlignmentType.Top,
             string backgroundColor = "",
             bool withBorder = false)
@@ -1254,13 +1253,13 @@ namespace AsposePdfBuilder.Builders
             row.DefaultRowCellPadding = parentPadding ?? DefaultInnerPadding;
             row.VerticalAlignment = verticalAlignment;
             row.IsBroken = false;
-            row.BackgroundColor = new Color(
+            row.BackgroundColor = new Generator.Color(
                 !string.IsNullOrEmpty(backgroundColor)
                     ? backgroundColor
-                    : Resources.InnerTableColor);
+                    : Properties.Resources.InnerTableColor);
             if (withBorder)
             {
-                row.DefaultCellBorder = new BorderInfo((int)BorderSide.All, DefaultBorderSize);
+                row.DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.All, DefaultBorderSize);
             }
             return row;
         }
@@ -1278,17 +1277,17 @@ namespace AsposePdfBuilder.Builders
         /// <param name="padding">padding</param>
         /// <param name="keepContentTogether">keepContentTogether</param>
         /// <param name="isKeptWithNext">isKeptWithNext</param>
-        public Table CreateSimpleInnerTable(
+        public Generator.Table CreateSimpleInnerTable(
             string columnWidths, 
             string fontName = "", 
             float fontSize = 0,
-            BorderSide borderSide = BorderSide.None, 
+            Generator.BorderSide borderSide = Generator.BorderSide.None, 
             AlignmentType alignment = AlignmentType.Left, 
-            MarginInfo padding = null, 
+            Generator.MarginInfo padding = null, 
             bool keepContentTogether = false, 
             bool isKeptWithNext = false)
         {
-            var table = new Table
+            var table = new Generator.Table
             {
                 ColumnWidths = columnWidths,
                 DefaultCellTextInfo =
@@ -1298,16 +1297,16 @@ namespace AsposePdfBuilder.Builders
                         : DefaultInnerBodyFontSize,
                     FontName = !string.IsNullOrEmpty(fontName)
                         ? fontName
-                        : Resources.ArialFont
+                        : Properties.Resources.ArialFont
                 },
                 Alignment = alignment,
                 IsBroken = !keepContentTogether,
                 IsFirstRowRepeated = true,
                 IsKeptWithNext = isKeptWithNext
             };
-            if (borderSide != BorderSide.None)
+            if (borderSide != Generator.BorderSide.None)
             {
-                table.Border = new BorderInfo((int) borderSide, DefaultBorderSize);
+                table.Border = new Generator.BorderInfo((int) borderSide, DefaultBorderSize);
             }
             if (padding != null)
             {
@@ -1331,8 +1330,8 @@ namespace AsposePdfBuilder.Builders
         /// <param name="fixedRowHeight">fixedRowHeight</param>
         /// <param name="cellContent">cellContent</param>
         public void CreateInnerTableItemCells(
-            Row row,
-            MarginInfo defaultPadding = null,
+            Generator.Row row,
+            Generator.MarginInfo defaultPadding = null,
             string backgroundColor = "",
             string textColor = "",
             string fontName = "",
@@ -1343,17 +1342,17 @@ namespace AsposePdfBuilder.Builders
             params DisplayCell[] cellContent)
         {
             row.IsBroken = false;
-            row.BackgroundColor = new Color(
+            row.BackgroundColor = new Generator.Color(
                 !string.IsNullOrEmpty(backgroundColor)
                     ? backgroundColor
-                    : Resources.InnerTableColor);
-            row.DefaultCellTextInfo.Color = new Color(
+                    : Properties.Resources.InnerTableColor);
+            row.DefaultCellTextInfo.Color = new Generator.Color(
                 !string.IsNullOrEmpty(textColor)
                     ? textColor
-                    : Resources.GreyColor);
+                    : Properties.Resources.GreyColor);
             row.DefaultCellTextInfo.FontName = !string.IsNullOrEmpty(fontName)
                 ? fontName
-                : Resources.ArialFont;
+                : Properties.Resources.ArialFont;
             row.DefaultCellTextInfo.FontSize = fontSize == 0
                 ? DefaultInnerBodyFontSize
                 : fontSize;
@@ -1370,7 +1369,7 @@ namespace AsposePdfBuilder.Builders
             {
                 foreach (var item in cellContent)
                 {
-                    Cell cell;
+                    Generator.Cell cell;
                     if (item.TextAreaInfo != null)
                     {
                         cell = CreateTextAreaCell(row, item.Content, item.TextAreaInfo.Padding,
@@ -1393,7 +1392,7 @@ namespace AsposePdfBuilder.Builders
                             }
                             else
                             {
-                                CreateCellText(row, cell, Resources.CrossLabel, Resources.ArialUnicodeFont); 
+                                CreateCellText(row, cell, Properties.Resources.CrossLabel, Properties.Resources.ArialUnicodeFont); 
                             }
                         }
                         else
@@ -1403,17 +1402,17 @@ namespace AsposePdfBuilder.Builders
                         }
                     }
 
-                    if (item.Border != BorderSide.None)
+                    if (item.Border != Generator.BorderSide.None)
                     {
-                        cell.Border = new BorderInfo((int)item.Border, DefaultBorderSize);
+                        cell.Border = new Generator.BorderInfo((int)item.Border, DefaultBorderSize);
                     }
                     if (!string.IsNullOrEmpty(item.Color))
                     {
-                        cell.DefaultCellTextInfo.Color = new Color(item.Color);
+                        cell.DefaultCellTextInfo.Color = new Generator.Color(item.Color);
                     }
                     if (item.NeedCellBorder)
                     {
-                        cell.Border = new BorderInfo((int)BorderSide.All, DefaultBorderSize);
+                        cell.Border = new Generator.BorderInfo((int)Generator.BorderSide.All, DefaultBorderSize);
                     }
                     if (item.IsDate || item.IsCentralized)
                     {
@@ -1422,7 +1421,7 @@ namespace AsposePdfBuilder.Builders
                     if (item.IsTotal)
                     {
                         // Bold font
-                        cell.DefaultCellTextInfo.FontName = Resources.ArialFont;
+                        cell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
                         row.DefaultCellTextInfo.IsTrueTypeFontBold = true;
                     }
                     if (item.IsCurrency)
@@ -1432,19 +1431,19 @@ namespace AsposePdfBuilder.Builders
                     }
                     if (!string.IsNullOrEmpty(item.BackgroundColor))
                     {
-                        cell.BackgroundColor = new Color(item.BackgroundColor);
+                        cell.BackgroundColor = new Generator.Color(item.BackgroundColor);
                     }
                     if (item.IsHeader)
                     {
-                        cell.BackgroundColor = new Color(Resources.HeaderTableBackgroundColor);
-                        cell.DefaultCellTextInfo.Color = new Color(Resources.WhiteColor);
-                        cell.DefaultCellTextInfo.FontName = Resources.ArialFont;
+                        cell.BackgroundColor = new Generator.Color(Properties.Resources.HeaderTableBackgroundColor);
+                        cell.DefaultCellTextInfo.Color = new Generator.Color(Properties.Resources.WhiteColor);
+                        cell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
                         cell.DefaultCellTextInfo.FontSize = DefaultHeadingThreeFontSize;
                         cell.DefaultCellTextInfo.IsTrueTypeFontBold = true;
                     }
                     if (item.IsEmpty)
                     {
-                        cell.BackgroundColor = new Color(Resources.LightGrayColor);
+                        cell.BackgroundColor = new Generator.Color(Properties.Resources.LightGrayColor);
                     }
 
                     cell.ColumnsSpan = item.ColumnSpan > 0
@@ -1459,17 +1458,17 @@ namespace AsposePdfBuilder.Builders
         }
 
         /// <summary>
-        /// Create <see cref="Text"/> and inject it into a <see cref="Cell"/>.
-        /// <see cref="Row"/> provides additional information necessary to format
+        /// Create <see cref="Text"/> and inject it into a <see cref="Generator.Cell"/>.
+        /// <see cref="Generator.Row"/> provides additional information necessary to format
         /// the text.
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="cell">cell</param>
         /// <param name="content">content</param>
         /// <param name="fontName">fontName</param>
-        private static void CreateCellText(Row row, Cell cell, string content, string fontName = "")
+        private static void CreateCellText(Generator.Row row, Generator.Cell cell, string content, string fontName = "")
         {
-            var cellText = new Text(content)
+            var cellText = new Generator.Text(content)
             {
                 TextInfo = new TextInfo
                     {
@@ -1504,8 +1503,8 @@ namespace AsposePdfBuilder.Builders
             string[] descriptions,
             string columnWidths = DefaultColumnSpanThreeWidth,
             string title = "",
-            Table parentTable = null,
-            MarginInfo parentPadding = null,
+            Generator.Table parentTable = null,
+            Generator.MarginInfo parentPadding = null,
             bool keepContentTogether = false,
             bool isKeptTogether = false,
             bool isKeptWithNext = false)
@@ -1556,26 +1555,26 @@ namespace AsposePdfBuilder.Builders
         /// <param name="secondSectionText">secondSectionText</param>
         /// <param name="padding">padding</param>
         public void CreateInnerTableLabelValueRow(
-            Table table,
+            Generator.Table table,
             string columnWidths,
             string description,
             string label = "",
             string firstSectionText = "",
             string underlineText = "",
             string secondSectionText = "",
-            MarginInfo padding = null)
+            Generator.MarginInfo padding = null)
         {
-            var nestedTable = new Table
+            var nestedTable = new Generator.Table
             {
                 ColumnWidths = columnWidths,
                 DefaultCellTextInfo =
                 {
-                    FontName = Resources.ArialFont,
+                    FontName = Properties.Resources.ArialFont,
                     FontSize = DefaultInnerBodyFontSize
                 },
-                DefaultCellBorder = new BorderInfo((int)BorderSide.All, DefaultBorderSize),
+                DefaultCellBorder = new Generator.BorderInfo((int)Generator.BorderSide.All, DefaultBorderSize),
                 DefaultCellPadding = DefaultInnerPadding,
-                BackgroundColor = new Color(Resources.InnerTableColor)
+                BackgroundColor = new Generator.Color(Properties.Resources.InnerTableColor)
             };
 
             // add descriptions
@@ -1584,13 +1583,13 @@ namespace AsposePdfBuilder.Builders
                 !string.IsNullOrEmpty(firstSectionText) &&
                 !string.IsNullOrEmpty(secondSectionText))
             {
-                var labelSectionText = new Text(Section);
+                var labelSectionText = new Generator.Text(Section);
                 var labelSegmentOne = new Segment(labelSectionText)
                 {
                     Content = firstSectionText,
                     TextInfo =
                     {
-                        FontName = Resources.ArialFont,
+                        FontName = Properties.Resources.ArialFont,
                         FontSize = DefaultInnerBodyFontSize
                     }
                 };
@@ -1602,7 +1601,7 @@ namespace AsposePdfBuilder.Builders
                     Content = underlineText,
                     TextInfo =
                     {
-                        FontName = Resources.ArialFont,
+                        FontName = Properties.Resources.ArialFont,
                         FontSize = DefaultInnerBodyFontSize,
                         IsUnderline = true,
                         IsTrueTypeFontBold = true,
@@ -1615,7 +1614,7 @@ namespace AsposePdfBuilder.Builders
                     Content = secondSectionText,
                     TextInfo =
                     {
-                        FontName = Resources.ArialFont,
+                        FontName = Properties.Resources.ArialFont,
                         FontSize = DefaultInnerBodyFontSize,
                         IsTrueTypeFontBold = true
                     }
@@ -1655,7 +1654,7 @@ namespace AsposePdfBuilder.Builders
         /// <returns>Yes or No value</returns>
         public string CreateYesNoValue(bool value)
         {
-            return value ? Resources.YesValue : Resources.NoValue;
+            return value ? Properties.Resources.YesValue : Properties.Resources.NoValue;
         }
 
         #endregion
@@ -1678,14 +1677,14 @@ namespace AsposePdfBuilder.Builders
             string title,
             string textAreaText,
             string defaultColumnWidth = DefaultTextAreaColumnWidth,
-            MarginInfo textAreaPadding = null,
+            Generator.MarginInfo textAreaPadding = null,
             bool withInternalBlankRow = false,
             bool withRoundedCorners = false)
         {
             // parent housing table
             var textAreaTable = CreateOuterTable(
                 parentColumnWidths,
-                Resources.ArialFont,
+                Properties.Resources.ArialFont,
                 DefaultHeadingTwoFontSize,
                 DefaultOuterPadding,
                 keepContentTogether: true);
@@ -1694,7 +1693,7 @@ namespace AsposePdfBuilder.Builders
             var nestedTable = AddNestedTable(
                 textAreaTable, 
                 defaultColumnWidth, 
-                Resources.ArialFont,
+                Properties.Resources.ArialFont,
                 DefaultHeadingTwoFontSize, 
                 isKeptTogether: true, 
                 isKeptWithNext: true);
@@ -1702,7 +1701,7 @@ namespace AsposePdfBuilder.Builders
             // Label Area formatting
             var parentTableLabelRow = nestedTable.Rows.Add();
             parentTableLabelRow.IsBroken = false;
-            var inputColor = new Color(Resources.GreyColor);
+            var inputColor = new Generator.Color(Properties.Resources.GreyColor);
             parentTableLabelRow.DefaultCellTextInfo.IsTrueTypeFontBold = true;
             parentTableLabelRow.DefaultCellTextInfo.Color = inputColor;
             parentTableLabelRow.DefaultCellTextInfo.LineSpacing = TextAreaLineSpacing;
@@ -1711,13 +1710,13 @@ namespace AsposePdfBuilder.Builders
             
             // Text Area formatting
             var textAreaInnerTable = CreateInnerTable(
-                Resources.DefaultFullWidth,
+                Properties.Resources.DefaultFullWidth,
                 fontSize: DefaultHeadingTwoFontSize,
                 parentTable: textAreaTable,
                 keepContentTogether: true,
                 // in some circumstances, a blank row has to be created like this, in order to separate elements.
                 padding: withInternalBlankRow ? HeadingWithNoSubHeadingPadding : null);
-            textAreaInnerTable.BackgroundColor = new Color(Resources.InnerTableColor);
+            textAreaInnerTable.BackgroundColor = new Generator.Color(Properties.Resources.InnerTableColor);
             var textAreaInnerTableRow = textAreaInnerTable.Rows.Add();
             var textAreaCell = textAreaInnerTableRow.Cells.Add(textAreaText);
             textAreaCell.Padding = textAreaPadding ?? DefaultTextAreaDescriptionPadding;
@@ -1735,10 +1734,10 @@ namespace AsposePdfBuilder.Builders
         /// <param name="alignment">alignment</param>
         /// <param name="withRoundedCorners">withRoundedCorners</param>
         /// <param name="withBorder">withBorder</param>
-        public Cell CreateTextAreaCell(
-            Row row,
+        public Generator.Cell CreateTextAreaCell(
+            Generator.Row row,
             string textAreaText,
-            MarginInfo textAreaPadding = null,
+            Generator.MarginInfo textAreaPadding = null,
             VerticalAlignmentType verticalAlignment = VerticalAlignmentType.Top,
             AlignmentType alignment = AlignmentType.Left,
             bool withRoundedCorners = false,
@@ -1748,9 +1747,9 @@ namespace AsposePdfBuilder.Builders
             var cell = row.Cells.Add(textAreaText);
             // Text Area formatting
             cell.Padding = textAreaPadding ?? DefaultTextAreaDescriptionPadding;
-            cell.DefaultCellTextInfo.FontName = Resources.ArialFont;
+            cell.DefaultCellTextInfo.FontName = Properties.Resources.ArialFont;
             cell.DefaultCellTextInfo.FontSize = DefaultInnerBodyFontSize;
-            cell.DefaultCellTextInfo.Color = new Color(Resources.GreyColor);
+            cell.DefaultCellTextInfo.Color = new Generator.Color(Properties.Resources.GreyColor);
             cell.VerticalAlignment = verticalAlignment;
             cell.Alignment = alignment;
             return cell;
@@ -1762,19 +1761,19 @@ namespace AsposePdfBuilder.Builders
         /// </summary>
         /// <param name="withRoundedCorners">withRoundedCorners</param>
         /// <param name="table">table</param>
-        private static void CreateStandardOrRoundedCornersBorder(bool withRoundedCorners, Table table)
+        private static void CreateStandardOrRoundedCornersBorder(bool withRoundedCorners, Generator.Table table)
         {
-            table.Border = new BorderInfo((int)BorderSide.All, DefaultBorderSize, new Color(Resources.BlackColor));
+            table.Border = new Generator.BorderInfo((int)Generator.BorderSide.All, DefaultBorderSize, new Generator.Color(Properties.Resources.BlackColor));
             if (!withRoundedCorners) return;
-            table.Border = new BorderInfo
+            table.Border = new Generator.BorderInfo
             {
-                Round = new GraphInfo
+                Round = new Generator.GraphInfo
                 {
                     CornerRadius = DefaultCornerRadius,
-                    Color = new Color(Resources.BlackColor)
+                    Color = new Generator.Color(Properties.Resources.BlackColor)
                 }
             };
-            table.CornerStyle = BorderCornerStyle.Round;
+            table.CornerStyle = Generator.BorderCornerStyle.Round;
         }
 
         #endregion
@@ -1782,14 +1781,14 @@ namespace AsposePdfBuilder.Builders
         #region Miscellaneous Methods
 
         /// <summary>
-        /// Retrieves the column span for a <see cref="Table"/> by checking 
-        /// the <see cref="Table.ColumnWidths"/> specified.
-        /// Will return '1' if <see cref="Table.ColumnWidths"/> isn't set,
+        /// Retrieves the column span for a <see cref="Generator.Table"/> by checking 
+        /// the <see cref="Generator.Table.ColumnWidths"/> specified.
+        /// Will return '1' if <see cref="Generator.Table.ColumnWidths"/> isn't set,
         /// or does not contain more than one column.
         /// </summary>
         /// <param name="table">table</param>
         /// <returns>column span</returns>
-        public static int GetColumnSpan(Table table)
+        public static int GetColumnSpan(Generator.Table table)
         {
             return !string.IsNullOrEmpty(table.ColumnWidths) && table.ColumnWidths.Contains(" ")
                 ? table.ColumnWidths.Split(' ').Length

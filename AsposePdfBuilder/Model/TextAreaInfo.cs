@@ -1,6 +1,4 @@
-﻿using Aspose.Pdf.Generator;
-
-namespace AsposePdfBuilder.Model
+﻿namespace Aspose.Pdf.Builder.Model
 {
     /// <summary>
     /// TextAreaInfo encapsulates the common properties necessary to 
@@ -11,6 +9,6 @@ namespace AsposePdfBuilder.Model
         public string ColumnWidths { get; set; }
         public bool WithBorder { get; set; }
         public bool WithRoundedCorners { get; set; }
-        public MarginInfo Padding { get; set; }
+        public Generator.MarginInfo Padding { get; set; }
     }
 }

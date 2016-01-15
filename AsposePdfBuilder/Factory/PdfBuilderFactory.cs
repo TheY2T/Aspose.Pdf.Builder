@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Aspose.Pdf;
+using Aspose.Pdf.Builder.Builders;
 using Aspose.Pdf.Facades;
-using AsposePdfBuilder.Builders;
-using AsposePdfBuilder.Extensions;
+using Aspose.Pdf.Builder.Extensions;
 
-namespace AsposePdfBuilder.Factory
+namespace Aspose.Pdf.Builder.Factory
 {
     public static class PdfBuilderFactory
     {

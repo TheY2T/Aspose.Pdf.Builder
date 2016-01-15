@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposePdfBuilderExamples", "AsposePdfBuilderExamples.csproj", "{3771CBCC-AA8E-4274-95A6-A6E10C9CEB9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposePdfBuilder", "..\AsposePdfBuilder\AsposePdfBuilder.csproj", "{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Pdf.Builder", "..\AsposePdfBuilder\Aspose.Pdf.Builder.csproj", "{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

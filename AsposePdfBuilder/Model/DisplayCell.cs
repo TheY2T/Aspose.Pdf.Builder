@@ -1,6 +1,4 @@
-﻿using Aspose.Pdf.Generator;
-
-namespace AsposePdfBuilder.Model
+﻿namespace Aspose.Pdf.Builder.Model
 {
     /// <summary>
     /// DisplayCell encapsulates the common properties necessary to create a cell with content 
@@ -21,8 +19,8 @@ namespace AsposePdfBuilder.Model
         public TextAreaInfo TextAreaInfo { get; set; }
         public string Color { get; set; }
         public string BackgroundColor { get; set; }
-        public Table TableInfo { get; set; }
-        public BorderSide Border { get; set; }
+        public Generator.Table TableInfo { get; set; }
+        public Generator.BorderSide Border { get; set; }
         public bool IsCheckBox { get; set; }
         public bool IsChecked { get; set; }
     }

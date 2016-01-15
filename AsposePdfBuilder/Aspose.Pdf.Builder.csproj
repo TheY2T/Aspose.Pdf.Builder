@@ -7,8 +7,8 @@
     <ProjectGuid>{DCF7E3DE-8BC9-4CBE-9F82-E354090AFF6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsposePdfBuilder</RootNamespace>
-    <AssemblyName>AsposePdfBuilder</AssemblyName>
+    <RootNamespace>Aspose.Pdf.Builder</RootNamespace>
+    <AssemblyName>Aspose.Pdf.Builder</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

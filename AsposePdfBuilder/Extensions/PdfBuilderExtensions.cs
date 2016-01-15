@@ -1,7 +1,7 @@
-﻿using Aspose.Pdf.Generator;
-using AsposePdfBuilder.Builders;
+﻿using Aspose.Pdf.Builder.Builders;
+using Aspose.Pdf.Generator;
 
-namespace AsposePdfBuilder.Extensions
+namespace Aspose.Pdf.Builder.Extensions
 {
     public static class PdfBuilderExtensions
     {
