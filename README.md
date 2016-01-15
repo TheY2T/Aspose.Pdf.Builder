@@ -21,6 +21,8 @@ I've removed the packages associated with the solutions as it made the repo unne
 <br/>
 <br/> NOTE: It is recommended that you make use of PageSize class that is available in ***Aspose.Pdf.Generator.PageSize*** for correct height and width of pdf pages. 
 <br/>customMargin is the margin to be set on each page in the PDF. Use ***Aspose.Pdf.Generator.MarginInfo*** to set the margins you want.
+<br/>e.g. ```var pdfBuilder = Aspose.Pdf.Builder.Factory.PdfBuilderFactory.CreateAsposePdfBuilder(new MarginInfo(), PageSize.A0Height, PageSize.A0Width);```
+
 
 2. <b>Setting your own Aspose License</b>
 <br/>```Aspose.Pdf.Builder.Factory.PdfBuilderFactory.SetAsposeLicense(licensePath);```
